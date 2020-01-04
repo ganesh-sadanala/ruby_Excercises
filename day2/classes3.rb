@@ -18,5 +18,5 @@ end
 
   puts book.title
   puts book.author
-  puts book.is_price_high?
+  puts book.is_price_high? 
   

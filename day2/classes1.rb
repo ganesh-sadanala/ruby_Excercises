@@ -14,7 +14,7 @@ class Book
 
  def title
   return @title
-  end
+  end                      
   def author
    return @author
   end
