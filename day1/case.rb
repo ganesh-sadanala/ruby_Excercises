@@ -1,3 +1,5 @@
+#swithch case in ruby
+
 var='day2'
 case var
   when 'day1'

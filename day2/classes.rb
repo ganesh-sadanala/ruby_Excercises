@@ -1,10 +1,4 @@
 class Book
-  def initialize
-  end    
-  '''def initialize(aTitle , aAuthor)
-       @title=aTitle
-       @author=aAuthor
-  end'''
  def set_title(aTitle)
        @title=aTitle
  end
@@ -18,9 +12,9 @@ class Book
   def get_author
    return @author
   end
-  ref=Book.new
+end
+ref=Book.new
   ref.set_title("ruby")
   ref.set_author("ganesh")
   puts ref.get_title
   puts ref.get_author
-end
