@@ -59,3 +59,51 @@ todos = [
   ["Pay taxes", "money"],
   ["Buy groceries", "food"]
 ]
+
+
+
+#Problem 4. Given two arrays books and authors, merge them into a single Hash. The keys of the Hash must be the lower-cased firstname of the authors, and must be symbols.
+
+books = ["Design as Art", "Anathem", "Shogun"]
+authors = ["Bruno Munari", "Neal Stephenson", "James Clavell"]
+
+#Merge two array using zip method
+
+booksInfo=books.zip(authors)
+
+#create an empty hash
+
+library={}
+
+#add to the hash
+
+booksInfo.each{|x| library[x[1].split.first.downcase.to_sym]=x[0]}
+
+puts library
+
+#output
+
+{:bruno=>"Design as Art", :neal=>"Anathem", :james=>"Shogun"}
+
+#Problem 2. Given this list of todos, create a Hash keyed by category, whose value is an array containing all the todos in that category. The keys of the Hash must be a symbol.
+
+todos = [
+  ["Send invoice", "money"],
+  ["Clean room", "organize"],
+  ["Pay rent", "money"],
+  ["Arrange books", "organize"],
+  ["Pay taxes", "money"],
+  ["Buy groceries", "food"]
+]
+
+#make empty array object as default value
+
+todoHash=Hash.new{|h,k| h[k]=[]}
+
+todos.each{|x| todoHash[x[1].to_sym].push(x[0])}
+
+puts todoHash
+
+#output
+
+{:money=>["Send invoice", "Pay rent", "Pay taxes"], :organize=>["Clean room", "Arrange books"], :food=>["Buy groceries"]}
