@@ -20,11 +20,9 @@ class Todo
   end
 
   def to_displayable_string
-    if due_today?
-      return "[] #{@text}"
-    end
-
-    return "[] #{@text} #{@due_date}"
+    display_status = @completed ? "[X]" : "[ ]"
+    display_date = due_today? ? "" : @due_date
+    "#{display_status} #{@text} #{display_date}"
   end
 end
 
